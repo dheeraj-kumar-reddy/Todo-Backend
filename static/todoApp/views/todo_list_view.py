@@ -70,6 +70,8 @@ class TodoListView(Resource):
             return{"message":"Task updated"}
         except KeyError:
             return {"message": "task not found"}
+        except ValueError as e:
+            return {"message": "Todo with the request id not found"}
         except Exception as e:
             logger.error(f"Error: {e}")
             return {"message": "something went wrong"},501
