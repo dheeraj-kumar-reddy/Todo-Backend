@@ -66,7 +66,7 @@ class TodoListView(Resource):
         :return:
         """
         try:
-            Todo.update(todo_id,title="",completed=True)
+            Todo.update_complete(todo_id)
             return{"message":"Task updated"}
         except KeyError:
             return {"message": "task not found"}
