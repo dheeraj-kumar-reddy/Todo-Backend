@@ -23,7 +23,7 @@ class Todo(db.Model):
         return todo
 
     @staticmethod
-    def update(task_id,title completed):
+    def update(task_id,title, completed):
         todo = Todo.get_by_id(task_id)
         if todo is None :
             raise ValueError("Todo with the given id not found")
